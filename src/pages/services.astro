@@ -1,0 +1,251 @@
+---
+import '../styles/site.css';
+const nav = [
+  { label: 'Home', href: '/2448' },
+  { label: 'Services', href: '/2448/services' },
+  { label: 'Salon', href: '/2448/salon' },
+  { label: 'Self-Service Wash', href: '/2448/self-service' },
+  { label: 'Gallery', href: '/2448/gallery' },
+  { label: 'About', href: '/2448/about' },
+  { label: 'Contact', href: '/2448/contact' },
+];
+---
+
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Services | Dog Gone Clean, Swansea</title>
+    <meta name="description" content="Dog grooming services at Dog Gone Clean, Swansea. Full grooms, bath and brush, puppy first grooms, nail trims and self-service dog wash. All breeds welcome." />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="preload" href="/2448/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/2448/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  </head>
+  <body class="bg-brand-bg">
+
+    <!-- Preview banner -->
+    <div class="bg-brand-accent text-white py-2.5 px-4 text-center text-sm sticky top-0 z-50">
+      <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+        <span>Preview redesign for <strong>Dog Gone Clean</strong> by <strong>Biscuit Web</strong></span>
+        <a href="https://biscuitweb.co.uk/activate?id=2448&name=Dog%20Gone%20Clean" class="inline-flex items-center px-4 py-1 bg-white text-brand-accent font-bold text-xs rounded-full hover:opacity-80 transition-opacity shrink-0">
+          Like it? Activate for &pound;50
+        </a>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white border-b border-border sticky top-10 z-40">
+      <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+        <a href="/2448" class="font-display font-extrabold text-xl text-brand-accent">Dog Gone Clean 🐾</a>
+        <button class="md:hidden p-2 text-ink-soft" onclick="document.getElementById('mobile-nav').classList.toggle('hidden')" aria-label="Open menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <nav class="hidden md:flex items-center gap-5">
+          {nav.map(n => (
+            <a href={n.href} class={`text-sm font-semibold transition-colors ${n.href === '/2448/services' ? 'text-brand-accent' : 'text-ink-soft hover:text-brand-accent'}`}>{n.label}</a>
+          ))}
+          <a href="tel:+447837280709" class="inline-flex items-center px-5 py-2 bg-brand-accent text-white font-display font-bold text-sm rounded hover:opacity-90 transition-opacity">
+            07837 280 709
+          </a>
+        </nav>
+      </div>
+      <div id="mobile-nav" class="hidden md:hidden border-t border-border bg-white px-6 pb-4">
+        {nav.map(n => (
+          <a href={n.href} class="block py-2.5 text-sm font-semibold text-ink-soft hover:text-brand-accent border-b border-border last:border-0">{n.label}</a>
+        ))}
+        <a href="tel:+447837280709" class="mt-3 block text-center px-5 py-3 bg-brand-accent text-white font-display font-bold text-sm rounded">
+          Call: 07837 280 709
+        </a>
+      </div>
+    </header>
+
+    <!-- Page hero -->
+    <section class="relative overflow-hidden bg-brand-purple text-white py-16 sm:py-20">
+      <div class="absolute inset-0 bg-gradient-to-br from-brand-purple via-brand-accent-deep to-brand-accent opacity-90"></div>
+      <div class="relative z-10 mx-auto max-w-4xl px-6 text-center">
+        <div class="inline-flex items-center gap-1.5 bg-white/15 text-white text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
+          📍 Swansea
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-display font-extrabold text-white mb-4">Our Services</h1>
+        <p class="text-white/85 text-lg max-w-xl mx-auto">Professional grooming for all breeds, large or small. We work to your preferences and your dog's needs.</p>
+      </div>
+    </section>
+
+    <!-- Services detail -->
+    <section class="py-16 sm:py-24 bg-white">
+      <div class="mx-auto max-w-6xl px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+          <!-- Full Groom -->
+          <div class="bg-brand-bg rounded-2xl p-8 border border-border">
+            <div class="text-4xl mb-4">✂️</div>
+            <h2 class="text-xl font-display font-extrabold text-ink mb-3">Full Groom</h2>
+            <p class="text-ink-soft leading-relaxed mb-4">
+              Our most popular service. Your dog gets a full shampoo and condition, blow-dry, brush-out, clip or scissor finish to your preferred style, nail trim, ear clean and a finishing spritz. We'll work to breed standard or however you like it.
+            </p>
+            <p class="text-ink-soft leading-relaxed">
+              Prices vary by breed and coat condition. Call us for a quote.
+            </p>
+          </div>
+
+          <!-- Bath &amp; Brush -->
+          <div class="bg-brand-bg rounded-2xl p-8 border border-border">
+            <div class="text-4xl mb-4">🛁</div>
+            <h2 class="text-xl font-display font-extrabold text-ink mb-3">Bath &amp; Brush</h2>
+            <p class="text-ink-soft leading-relaxed mb-4">
+              A thorough shampoo, conditioner, blow-dry and full brush-out. Ideal as an in-between service to keep coats fresh and manageable. Includes a nail check and ear clean.
+            </p>
+            <p class="text-ink-soft leading-relaxed">
+              Great for dogs that don't need a full cut but still deserve some pampering.
+            </p>
+          </div>
+
+          <!-- Puppy First Groom -->
+          <div class="bg-brand-purple-light rounded-2xl p-8 border border-brand-purple/20">
+            <div class="text-4xl mb-4">🐶</div>
+            <h2 class="text-xl font-display font-extrabold text-ink mb-3">Puppy First Groom</h2>
+            <p class="text-ink-soft leading-relaxed mb-4">
+              Getting puppies used to the grooming experience early makes a huge difference for life. We offer gentle, slow introductions for pups: a warm bath, a bit of drying, some basic handling and lots of reassurance.
+            </p>
+            <p class="text-ink-soft leading-relaxed">
+              We recommend bringing pups in after their second vaccination. Take a look at our <a href="/2448/gallery" class="text-brand-accent hover:underline">puppy gallery</a> to see how well they get on.
+            </p>
+          </div>
+
+          <!-- Self-Service Wash -->
+          <div class="bg-brand-pink-light rounded-2xl p-8 border border-brand-accent/20">
+            <div class="text-4xl mb-4">🚿</div>
+            <h2 class="text-xl font-display font-extrabold text-ink mb-3">Self-Service Dog Wash</h2>
+            <p class="text-ink-soft leading-relaxed mb-4">
+              Prefer to do it yourself? Use our purpose-built walk-in bath with professional shampoo, conditioner and high-powered dryers. No mess at home, no soggy bathroom.
+            </p>
+            <a href="/2448/self-service" class="inline-flex items-center gap-1 text-brand-accent font-semibold hover:underline text-sm">
+              More about self-service &rarr;
+            </a>
+          </div>
+
+          <!-- Collection &amp; Delivery -->
+          <div class="bg-brand-bg rounded-2xl p-8 border border-border">
+            <div class="text-4xl mb-4">🚗</div>
+            <h2 class="text-xl font-display font-extrabold text-ink mb-3">Collection &amp; Delivery</h2>
+            <p class="text-ink-soft leading-relaxed">
+              We offer a collection and delivery service for customers in the Swansea area who can't easily get to us. Call us on 07837 280 709 to discuss your location and arrange a pick-up time.
+            </p>
+          </div>
+
+          <!-- Nail Trim & Ear Clean -->
+          <div class="bg-brand-bg rounded-2xl p-8 border border-border">
+            <div class="text-4xl mb-4">💅</div>
+            <h2 class="text-xl font-display font-extrabold text-ink mb-3">Nail Trim &amp; Ear Clean</h2>
+            <p class="text-ink-soft leading-relaxed">
+              Quick individual appointments for nail trimming and ear cleaning. Particularly useful for older dogs or those who find a full salon session too much. Calm, careful and done with minimal fuss.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing table -->
+    <section class="py-16 sm:py-24 bg-cream-dark">
+      <div class="mx-auto max-w-4xl px-6">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl font-display font-extrabold text-ink mb-3">Price Guide</h2>
+          <p class="text-ink-soft max-w-lg mx-auto">Prices are a guide only. Final price depends on breed, coat condition and size. Call for a more accurate quote.</p>
+        </div>
+        <div class="bg-white rounded-2xl border border-border overflow-hidden shadow-md">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-brand-accent text-white">
+                <th class="text-left px-5 py-3 font-display font-bold">Breed / Size</th>
+                <th class="text-left px-5 py-3 font-display font-bold">Full Groom</th>
+                <th class="text-left px-5 py-3 font-display font-bold">Bath &amp; Brush</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-border">
+              <tr class="hover:bg-brand-bg transition-colors">
+                <td class="px-5 py-3 font-semibold text-ink">Small (e.g. Yorkie, Shih-tzu, Jack Russell)</td>
+                <td class="px-5 py-3 text-ink-soft">From &pound;30</td>
+                <td class="px-5 py-3 text-ink-soft">From &pound;20</td>
+              </tr>
+              <tr class="hover:bg-brand-bg transition-colors">
+                <td class="px-5 py-3 font-semibold text-ink">Medium (e.g. Cocker Spaniel, Westie, Schnauzer)</td>
+                <td class="px-5 py-3 text-ink-soft">From &pound;40</td>
+                <td class="px-5 py-3 text-ink-soft">From &pound;28</td>
+              </tr>
+              <tr class="hover:bg-brand-bg transition-colors">
+                <td class="px-5 py-3 font-semibold text-ink">Large (e.g. Labrador, Border Collie, Springer)</td>
+                <td class="px-5 py-3 text-ink-soft">From &pound;55</td>
+                <td class="px-5 py-3 text-ink-soft">From &pound;38</td>
+              </tr>
+              <tr class="hover:bg-brand-bg transition-colors">
+                <td class="px-5 py-3 font-semibold text-ink">Extra Large (e.g. Malamute, Akita, Saint Bernard)</td>
+                <td class="px-5 py-3 text-ink-soft">From &pound;70</td>
+                <td class="px-5 py-3 text-ink-soft">From &pound;50</td>
+              </tr>
+              <tr class="hover:bg-brand-bg transition-colors">
+                <td class="px-5 py-3 font-semibold text-ink">Puppy First Groom</td>
+                <td class="px-5 py-3 text-ink-soft" colspan="2">Call for quote</td>
+              </tr>
+              <tr class="hover:bg-brand-bg transition-colors">
+                <td class="px-5 py-3 font-semibold text-ink">Self-Service Wash</td>
+                <td class="px-5 py-3 text-ink-soft" colspan="2">Call for current rates</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-center text-xs text-ink-whisper mt-4">Prices are a guide and subject to change. Heavily matted coats may incur an additional charge.</p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-brand-accent text-white text-center">
+      <div class="mx-auto max-w-2xl px-6">
+        <h2 class="text-2xl sm:text-3xl font-display font-extrabold text-white mb-4">Book your appointment</h2>
+        <p class="text-white/85 mb-6">Call us to check availability. We're at 74 Bon-Y-Maen Road, Swansea.</p>
+        <a href="tel:+447837280709" class="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-brand-accent font-display font-bold rounded hover:opacity-90 transition-opacity">
+          📞 07837 280 709
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-ink text-white py-12">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          <div>
+            <div class="font-display font-extrabold text-lg text-white mb-3">Dog Gone Clean 🐾</div>
+            <p class="text-white/60 text-sm leading-relaxed">Professional dog grooming for all breeds, large or small. Based in Swansea.</p>
+          </div>
+          <div>
+            <div class="font-display font-bold text-sm text-white/80 uppercase tracking-widest mb-3">Pages</div>
+            <ul class="space-y-2">
+              {nav.map(n => (
+                <li><a href={n.href} class="text-white/60 text-sm hover:text-white transition-colors">{n.label}</a></li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <div class="font-display font-bold text-sm text-white/80 uppercase tracking-widest mb-3">Contact</div>
+            <ul class="space-y-2 text-white/60 text-sm">
+              <li><a href="tel:+447837280709" class="hover:text-white transition-colors">07837 280 709</a></li>
+              <li>74 Bon-Y-Maen Rd<br />Swansea</li>
+            </ul>
+          </div>
+          <div>
+            <div class="font-display font-bold text-sm text-white/80 uppercase tracking-widest mb-3">Follow Us</div>
+            <a href="http://en-gb.facebook.com/pages/Dog-Gone-Clean/245372945482676" target="_blank" rel="noopener noreferrer" class="text-white/60 text-sm hover:text-white transition-colors">
+              Facebook Page &rarr;
+            </a>
+          </div>
+        </div>
+        <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-white/40 text-xs">
+          <span>&copy; 2024 Dog Gone Clean. All rights reserved.</span>
+          <span>This is a sample site built by <a href="/" class="hover:text-white/70 transition-colors">Biscuit Web</a> to showcase our work.</span>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

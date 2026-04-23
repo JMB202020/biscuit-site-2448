@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 600 700 800;
+  font-display: swap;
+  src: url('/2448/fonts/inter-latin.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700 800;
+  font-display: swap;
+  src: url('/2448/fonts/nunito-latin.woff2') format('woff2');
+}
+
+@theme {
+  /* Dog Gone Clean: rose pink + deep plum accent */
+  --color-ink: #2C1A2E;
+  --color-ink-soft: #5C4060;
+  --color-ink-whisper: #9A82A0;
+  --color-cream: #FEF6FB;
+  --color-cream-dark: #F5E6F2;
+  --color-brand-bg: #FEF6FB;
+  --color-brand-accent: #C2336A;
+  --color-brand-accent-deep: #8F1A48;
+  --color-brand-pink-light: #F9D0E4;
+  --color-brand-purple: #7B3F8C;
+  --color-brand-purple-light: #EDE0F5;
+  --color-border: #E8D0E4;
+  --color-white: #FFFFFF;
+  --color-white-warm: #FFFAFD;
+  --color-success: #3A8A5C;
+  --color-error: #C4724E;
+
+  --font-display: 'Nunito', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  --text-5xl: clamp(2.5rem, 1.75rem + 3vw, 3.5rem);
+  --text-5xl--line-height: 1.05;
+  --text-4xl: clamp(2rem, 1.5rem + 2vw, 2.5rem);
+  --text-4xl--line-height: 1.1;
+  --text-3xl: clamp(1.5rem, 1.25rem + 1vw, 1.875rem);
+  --text-3xl--line-height: 1.15;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.12);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background-color: var(--color-brand-bg);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1.15;
+}
+img {
+  max-width: 100%;
+  display: block;
+}

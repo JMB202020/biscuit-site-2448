@@ -1,0 +1,164 @@
+---
+import '../styles/site.css';
+const nav = [
+  { label: 'Home', href: '/2448' },
+  { label: 'Services', href: '/2448/services' },
+  { label: 'Salon', href: '/2448/salon' },
+  { label: 'Self-Service Wash', href: '/2448/self-service' },
+  { label: 'Gallery', href: '/2448/gallery' },
+  { label: 'About', href: '/2448/about' },
+  { label: 'Contact', href: '/2448/contact' },
+];
+---
+
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Self-Service Dog Wash | Dog Gone Clean, Swansea</title>
+    <meta name="description" content="Use our self-service dog wash in Swansea. Professional raised bath, shampoo, conditioner and drying equipment. Wash your own dog without the mess at home." />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="preload" href="/2448/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/2448/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  </head>
+  <body class="bg-brand-bg">
+
+    <!-- Preview banner -->
+    <div class="bg-brand-accent text-white py-2.5 px-4 text-center text-sm sticky top-0 z-50">
+      <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+        <span>Preview redesign for <strong>Dog Gone Clean</strong> by <strong>Biscuit Web</strong></span>
+        <a href="https://biscuitweb.co.uk/activate?id=2448&name=Dog%20Gone%20Clean" class="inline-flex items-center px-4 py-1 bg-white text-brand-accent font-bold text-xs rounded-full hover:opacity-80 transition-opacity shrink-0">
+          Like it? Activate for &pound;50
+        </a>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white border-b border-border sticky top-10 z-40">
+      <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+        <a href="/2448" class="font-display font-extrabold text-xl text-brand-accent">Dog Gone Clean 🐾</a>
+        <button class="md:hidden p-2 text-ink-soft" onclick="document.getElementById('mobile-nav').classList.toggle('hidden')" aria-label="Open menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <nav class="hidden md:flex items-center gap-5">
+          {nav.map(n => (
+            <a href={n.href} class={`text-sm font-semibold transition-colors ${n.href === '/2448/self-service' ? 'text-brand-accent' : 'text-ink-soft hover:text-brand-accent'}`}>{n.label}</a>
+          ))}
+          <a href="tel:+447837280709" class="inline-flex items-center px-5 py-2 bg-brand-accent text-white font-display font-bold text-sm rounded hover:opacity-90 transition-opacity">
+            07837 280 709
+          </a>
+        </nav>
+      </div>
+      <div id="mobile-nav" class="hidden md:hidden border-t border-border bg-white px-6 pb-4">
+        {nav.map(n => (
+          <a href={n.href} class="block py-2.5 text-sm font-semibold text-ink-soft hover:text-brand-accent border-b border-border last:border-0">{n.label}</a>
+        ))}
+        <a href="tel:+447837280709" class="mt-3 block text-center px-5 py-3 bg-brand-accent text-white font-display font-bold text-sm rounded">
+          Call: 07837 280 709
+        </a>
+      </div>
+    </header>
+
+    <!-- Page hero -->
+    <section class="relative overflow-hidden min-h-[50vh] sm:min-h-[60vh] bg-ink flex items-end">
+      <img src="/2448/images/p1060432.jpg" alt="Self-service dog wash at Dog Gone Clean, Swansea" class="absolute inset-0 w-full h-full object-cover" fetchpriority="high" />
+      <div class="absolute inset-0 bg-black/70"></div>
+      <div class="relative z-10 mx-auto max-w-4xl px-6 pb-12 pt-32 text-white w-full">
+        <div class="inline-flex items-center gap-1.5 bg-white/15 text-white text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
+          📍 Swansea
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-display font-extrabold text-white mb-3">Self-Service Dog Wash</h1>
+        <p class="text-white/85 text-lg max-w-xl">Our professional walk-in bath is available to use yourself. Get a proper wash done without wrecking your bathroom.</p>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section class="py-16 sm:py-20 bg-white">
+      <div class="mx-auto max-w-5xl px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+          <div>
+            <h2 class="text-2xl sm:text-3xl font-display font-extrabold text-ink mb-5">Wash your dog, not your bathroom</h2>
+            <p class="text-ink-soft leading-relaxed mb-4">
+              Our self-service dog wash lets you give your dog a proper bath using professional equipment, without flooding your own bathroom or spending twenty minutes drying the walls down afterwards.
+            </p>
+            <p class="text-ink-soft leading-relaxed mb-4">
+              The raised, non-slip bath means no bending over or wrestling your dog on the ground. We provide shampoo, conditioner and high-powered drying facilities so you've got everything you need. Just bring a towel and yourself.
+            </p>
+            <p class="text-ink-soft leading-relaxed">
+              It's a great option for muddy dogs after a walk, between full grooms, or for owners who enjoy bathing their dog but want better kit than they have at home.
+            </p>
+          </div>
+          <div class="space-y-4">
+            <div class="bg-brand-bg rounded-2xl p-6 border border-border">
+              <h3 class="font-display font-extrabold text-ink mb-3">What's included</h3>
+              <ul class="space-y-2 text-sm text-ink-soft">
+                <li class="flex items-start gap-2"><span class="text-brand-accent mt-0.5">✓</span> Raised, non-slip dog bath</li>
+                <li class="flex items-start gap-2"><span class="text-brand-accent mt-0.5">✓</span> Professional shampoo and conditioner</li>
+                <li class="flex items-start gap-2"><span class="text-brand-accent mt-0.5">✓</span> High-powered drying equipment</li>
+                <li class="flex items-start gap-2"><span class="text-brand-accent mt-0.5">✓</span> Grooming brushes available</li>
+                <li class="flex items-start gap-2"><span class="text-brand-accent mt-0.5">✓</span> Apron provided</li>
+              </ul>
+            </div>
+            <div class="bg-brand-pink-light rounded-2xl p-6 border border-brand-accent/20">
+              <h3 class="font-display font-extrabold text-ink mb-2">To book a session</h3>
+              <p class="text-sm text-ink-soft mb-3">Call us to check availability and current rates. We'll get you booked in.</p>
+              <a href="tel:+447837280709" class="inline-flex items-center gap-2 text-brand-accent font-display font-bold text-sm hover:underline">
+                📞 07837 280 709
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-14 bg-brand-accent text-white text-center">
+      <div class="mx-auto max-w-2xl px-6">
+        <h2 class="text-2xl font-display font-extrabold text-white mb-4">Ready to book a session?</h2>
+        <p class="text-white/85 mb-6">Ring us to check availability. We're at 74 Bon-Y-Maen Road, Swansea.</p>
+        <a href="tel:+447837280709" class="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-brand-accent font-display font-bold rounded hover:opacity-90 transition-opacity">
+          📞 07837 280 709
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-ink text-white py-12">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          <div>
+            <div class="font-display font-extrabold text-lg text-white mb-3">Dog Gone Clean 🐾</div>
+            <p class="text-white/60 text-sm leading-relaxed">Professional dog grooming for all breeds, large or small. Based in Swansea.</p>
+          </div>
+          <div>
+            <div class="font-display font-bold text-sm text-white/80 uppercase tracking-widest mb-3">Pages</div>
+            <ul class="space-y-2">
+              {nav.map(n => (
+                <li><a href={n.href} class="text-white/60 text-sm hover:text-white transition-colors">{n.label}</a></li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <div class="font-display font-bold text-sm text-white/80 uppercase tracking-widest mb-3">Contact</div>
+            <ul class="space-y-2 text-white/60 text-sm">
+              <li><a href="tel:+447837280709" class="hover:text-white transition-colors">07837 280 709</a></li>
+              <li>74 Bon-Y-Maen Rd<br />Swansea</li>
+            </ul>
+          </div>
+          <div>
+            <div class="font-display font-bold text-sm text-white/80 uppercase tracking-widest mb-3">Follow Us</div>
+            <a href="http://en-gb.facebook.com/pages/Dog-Gone-Clean/245372945482676" target="_blank" rel="noopener noreferrer" class="text-white/60 text-sm hover:text-white transition-colors">
+              Facebook Page &rarr;
+            </a>
+          </div>
+        </div>
+        <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-white/40 text-xs">
+          <span>&copy; 2024 Dog Gone Clean. All rights reserved.</span>
+          <span>This is a sample site built by <a href="/" class="hover:text-white/70 transition-colors">Biscuit Web</a> to showcase our work.</span>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

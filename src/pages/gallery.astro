@@ -1,0 +1,287 @@
+---
+import '../styles/site.css';
+const nav = [
+  { label: 'Home', href: '/2448' },
+  { label: 'Services', href: '/2448/services' },
+  { label: 'Salon', href: '/2448/salon' },
+  { label: 'Self-Service Wash', href: '/2448/self-service' },
+  { label: 'Gallery', href: '/2448/gallery' },
+  { label: 'About', href: '/2448/about' },
+  { label: 'Contact', href: '/2448/contact' },
+];
+
+// All before/after pairs and other gallery images
+const beforeAfterPairs = [
+  { before: { src: 'p1010875-01.jpg', alt: 'Schnauzer before grooming' }, after: { src: 'p10108791.jpg', alt: 'Schnauzer after grooming' }, breed: 'Schnauzer' },
+  { before: { src: 'p1010951.jpg', alt: 'Marty Shih-tzu before' }, after: { src: 'p1010960.jpg', alt: 'Marty Shih-tzu after' }, breed: 'Shih-tzu' },
+  { before: { src: 'p1010974.jpg', alt: 'West Highland Terrier before' }, after: { src: 'p1010981.jpg', alt: 'West Highland Terrier after' }, breed: 'West Highland Terrier' },
+  { before: { src: 'west-highland-terrier-before.jpg', alt: 'West Highland Terrier before' }, after: { src: 'west-highland-terrier-after.jpg', alt: 'West Highland Terrier after' }, breed: 'West Highland Terrier' },
+  { before: { src: 'p1020011.jpg', alt: 'Molly Bichon Frise before' }, after: { src: 'p1020025.jpg', alt: 'Molly Bichon Frise after' }, breed: 'Bichon Frise' },
+  { before: { src: 'p1020967.jpg', alt: 'Pomeranian before' }, after: { src: 'p1020973.jpg', alt: 'Pomeranian after' }, breed: 'Pomeranian' },
+  { before: { src: 'p1030340.jpg', alt: 'Miniature Poodle before' }, after: { src: 'p1030354.jpg', alt: 'Miniature Poodle after' }, breed: 'Miniature Poodle' },
+  { before: { src: 'p1020040.jpg', alt: 'Angel & Tilly Cavalier King Charles Spaniels before' }, after: { src: 'p1020045.jpg', alt: 'Angel & Tilly Cavalier King Charles Spaniels after' }, breed: 'Cavalier King Charles Spaniels' },
+  { before: { src: 'p1020062.jpg', alt: 'Milly Cairn Terrier before' }, after: { src: 'p1020064.jpg', alt: 'Milly Cairn Terrier after' }, breed: 'Cairn Terrier' },
+  { before: { src: 'bichon-frise-before.jpg', alt: 'Bichon Frise before' }, after: { src: 'bichon-frise-after.jpg', alt: 'Bichon Frise after' }, breed: 'Bichon Frise' },
+  { before: { src: 'p1020009.jpg', alt: 'Diaz long hair German Shepherd before grooming' }, after: { src: 'p1020036.jpg', alt: 'Diaz German Shepherd after grooming' }, breed: 'German Shepherd' },
+  { before: { src: 'p1020108.jpg', alt: 'English Cocker Spaniel before' }, after: { src: 'p1020160.jpg', alt: 'English Cocker Spaniel after' }, breed: 'English Cocker Spaniel' },
+  { before: { src: 'p1020359.jpg', alt: 'Yorkshire Terrier before' }, after: { src: 'p1020365.jpg', alt: 'Yorkshire Terrier after' }, breed: 'Yorkshire Terrier' },
+  { before: { src: 'p1020505.jpg', alt: 'Shih-tzu before grooming session' }, after: { src: 'p1020511.jpg', alt: 'Shih-tzu after grooming session' }, breed: 'Shih-tzu' },
+  { before: { src: 'p1010990.jpg', alt: 'Megan Collie cross before' }, after: { src: 'p1010999.jpg', alt: 'Megan Collie cross winter coat' }, breed: 'Collie Cross' },
+  { before: { src: 'p1020715.jpg', alt: 'Labradoodle first groom' }, after: { src: 'p1020756.jpg', alt: 'Labradoodle after first groom' }, breed: 'Labradoodle' },
+  { before: { src: 'p1020779.jpg', alt: 'Miniature Poodle pup 5 months old' }, after: { src: 'p1020805.jpg', alt: 'Miniature Poodle after first groom' }, breed: 'Miniature Poodle Pup' },
+  { before: { src: 'p1030102.jpg', alt: '8 month old Schnauzer before first groom' }, after: { src: 'p1030145.jpg', alt: 'Schnauzer after first groom' }, breed: 'Schnauzer' },
+  { before: { src: 'cavalier-king-charles-spaieils-before.jpg', alt: 'Cavalier King Charles Spaniels before' }, after: { src: 'cavalier-king-charles-spaniels-after.jpg', alt: 'Cavalier King Charles Spaniels after' }, breed: 'Cavalier King Charles Spaniels' },
+  { before: { src: 'jack-russells-before.jpg', alt: 'Jack Russells before' }, after: { src: 'jack-russells-after.jpg', alt: 'Jack Russells after' }, breed: 'Jack Russells' },
+  { before: { src: 'p1040131.jpg', alt: 'Cavalier King Charles Spaniels before' }, after: { src: 'p1040170.jpg', alt: 'Cavalier King Charles Spaniels after' }, breed: 'Cavalier King Charles Spaniels' },
+  { before: { src: 'p1040312.jpg', alt: 'Scottish Terrier before' }, after: { src: 'p1040324.jpg', alt: 'Scottish Terrier after' }, breed: 'Scottish Terrier' },
+  { before: { src: 'p10401888.jpg', alt: 'Schnauzer before' }, after: { src: 'p10401922.jpg', alt: 'Schnauzer after' }, breed: 'Schnauzer' },
+  { before: { src: 'p1040610.jpg', alt: 'Yorkshire Terriers before' }, after: { src: 'p1040630.jpg', alt: 'Yorkshire Terriers after' }, breed: 'Yorkshire Terriers' },
+  { before: { src: 'p1040789.jpg', alt: 'Yorkie cross before' }, after: { src: 'p1040808.jpg', alt: 'Yorkie cross after' }, breed: 'Yorkie Cross' },
+  { before: { src: 'p1040767.jpg', alt: 'Cavalier before' }, after: { src: 'p1040772.jpg', alt: 'Cavalier after' }, breed: 'Cavalier' },
+  { before: { src: 'p1040931.jpg', alt: 'Bichon Frise before' }, after: { src: 'p1040940.jpg', alt: 'Bichon Frise after' }, breed: 'Bichon Frise' },
+  { before: { src: 'p1040947.jpg', alt: 'Schnauzer before' }, after: { src: 'p1040988.jpg', alt: 'Schnauzer after' }, breed: 'Schnauzer' },
+  { before: { src: 'p1050011.jpg', alt: 'Lhasa Apso before' }, after: { src: 'p1050025.jpg', alt: 'Lhasa Apso after' }, breed: 'Lhasa Apso' },
+  { before: { src: 'p1050212.jpg', alt: 'Cavalier before' }, after: { src: 'p1050214.jpg', alt: 'Cavalier after' }, breed: 'Cavalier' },
+  { before: { src: 'p1050245.jpg', alt: 'Bichon Frise before' }, after: { src: 'p1050257.jpg', alt: 'Bichon Frise after' }, breed: 'Bichon Frise' },
+  { before: { src: 'p1050302.jpg', alt: '7 month old Westie before' }, after: { src: 'p1050304.jpg', alt: '7 month old Westie after' }, breed: 'West Highland Terrier' },
+  { before: { src: 'p1050319.jpg', alt: '3 month old Yorkie pup before' }, after: { src: 'p1050347.jpg', alt: '3 month old Yorkie pup after' }, breed: 'Yorkshire Terrier Pup' },
+  { before: { src: 'p1050355.jpg', alt: 'Poodle x Shih-tzu before' }, after: { src: 'p1050360.jpg', alt: 'Poodle x Shih-tzu after' }, breed: 'Poodle x Shih-tzu' },
+  { before: { src: 'p1050278.jpg', alt: 'Springer Spaniel before' }, after: { src: 'p1050293.jpg', alt: 'Springer Spaniel after' }, breed: 'Springer Spaniel' },
+  { before: { src: 'p1060004.jpg', alt: 'Yorkshire Terrier before' }, after: { src: 'p1060051.jpg', alt: 'Yorkshire Terrier after' }, breed: 'Yorkshire Terrier' },
+  { before: { src: 'p1060056.jpg', alt: 'West Highland Terrier before' }, after: { src: 'p1060085.jpg', alt: 'West Highland Terrier after' }, breed: 'West Highland Terrier' },
+  { before: { src: 'p1060092.jpg', alt: 'Yorkie cross before' }, after: { src: 'p1060103.jpg', alt: 'Yorkie cross after' }, breed: 'Yorkie Cross' },
+  { before: { src: 'p1060149.jpg', alt: 'Bichon Frise before' }, after: { src: 'p1060196.jpg', alt: 'Bichon Frise after' }, breed: 'Bichon Frise' },
+  { before: { src: 'p1060356.jpg', alt: 'Cavachon before' }, after: { src: 'p1060361.jpg', alt: 'Cavachon after' }, breed: 'Cavachon' },
+  { before: { src: 'p1060759.jpg', alt: 'Cocker Spaniels before' }, after: { src: 'p1060765.jpg', alt: 'Cocker Spaniels after' }, breed: 'Cocker Spaniels' },
+  { before: { src: 'p1070136.jpg', alt: 'Jack-a-poo before' }, after: { src: 'p1070175.jpg', alt: 'Jack-a-poo after' }, breed: 'Jack-a-poo' },
+];
+
+// Single/featured images
+const singleImages = [
+  { src: 'p1020864.jpg', alt: '5 month old Shih-Tzu pup' },
+  { src: 'p1020879.jpg', alt: 'Shih-Tzu pup first groom' },
+  { src: 'p1020908.jpg', alt: 'Alaskan Malamute pup first wash' },
+  { src: 'p1020922.jpg', alt: 'Alaskan Malamute pup' },
+  { src: 'p1020559.jpg', alt: 'Border Collie' },
+  { src: 'p1020563.jpg', alt: 'Border Collie' },
+  { src: 'p10202551.jpg', alt: 'Akita (who\'s washing who)' },
+  { src: 'p1020286.jpg', alt: '61kg Akita' },
+  { src: 'megan-collie-cross-stress-free.jpg', alt: 'Megan Collie cross, stress free' },
+  { src: 'megan-collie-cross-summer-coat.jpg', alt: 'Megan Collie cross summer coat' },
+  { src: 'p1020176.jpg', alt: 'Alaskan Malamute' },
+  { src: 'p1020187.jpg', alt: 'Alaskan Malamute' },
+  { src: 'p1020210.jpg', alt: 'Black Labrador' },
+  { src: 'p1020218.jpg', alt: 'Black Labrador' },
+  { src: 'p1020298.jpg', alt: 'Yorkshire Terrier bath time' },
+  { src: 'p1020304.jpg', alt: 'Yorkshire Terrier after bath' },
+  { src: 'p1020324.jpg', alt: 'Shih-tzu overdue grooming session' },
+  { src: 'p1020329.jpg', alt: 'Shih-tzu, a much relieved dog' },
+  { src: 'p1020336.jpg', alt: 'Shih-tzu close shave' },
+  { src: 'p62800033.jpg', alt: 'Shih-tzu before' },
+  { src: 'p1030020.jpg', alt: 'Shih-tzu winter coat' },
+  { src: 'p62800311.jpg', alt: 'Shih-tzu summer coat' },
+  { src: 'p1030152.jpg', alt: 'Yorkshire Terrier pups before first groom' },
+  { src: 'p1030206.jpg', alt: 'Yorkshire Terrier pups after first groom' },
+  { src: 'shih-tzu-before.jpg', alt: 'Shih-tzu before' },
+  { src: 'shih-tzu-after.jpg', alt: 'Shih-tzu after' },
+  { src: 'spanniel-before.jpg', alt: 'Spaniel before' },
+  { src: 'spanniel-after.jpg', alt: 'Spaniel after' },
+  { src: 'yorkshire-terrier-before.jpg', alt: 'Yorkshire Terrier before' },
+  { src: 'yorkshire-terrier-after.jpg', alt: 'Yorkshire Terrier after' },
+  { src: 'shih-tzu-before-2.jpg', alt: 'Shih-tzu before' },
+  { src: 'shih-tzu-after-2.jpg', alt: 'Shih-tzu after' },
+  { src: 'german-shepherd-before.jpg', alt: 'German Shepherd before' },
+  { src: 'german-shepherd-after.jpg', alt: 'German Shepherd after' },
+  { src: 'cavalier-king-charles-spaneils.jpg', alt: 'Cavalier King Charles Spaniels' },
+  { src: 'p1020409.jpg', alt: 'Dachshunds 14 years old' },
+  { src: 'p1020412.jpg', alt: 'Dachshunds family' },
+  { src: 'p1020418.jpg', alt: 'Dachshunds' },
+  { src: 'labradoodle.jpg', alt: 'Labradoodle' },
+  { src: 'p1030609.jpg', alt: 'Border Collie' },
+  { src: 'border-collie.jpg', alt: 'Border Collie' },
+  { src: 'border-collie-2.jpg', alt: 'Border Collie' },
+  { src: 'p6290080.jpg', alt: 'Springer Spaniels before' },
+  { src: 'springer-spaniel-after.jpg', alt: 'Springer Spaniel after' },
+  { src: '2011-06-30-14-10-21-663.jpg', alt: 'Springer Spaniels after' },
+  { src: 'jack-russell-before.jpg', alt: 'Jack Russell before' },
+  { src: 'jack-russells-after-2.jpg', alt: 'Jack Russells after' },
+  { src: 'p1040484.jpg', alt: '12 year old Spaniel close shave' },
+  { src: 'p1040741.jpg', alt: 'Cavalier King Charles Spaniel' },
+  { src: 'p1040957.jpg', alt: 'Schnauzer' },
+  { src: 'p1050027.jpg', alt: 'Labrador' },
+  { src: 'p1050037.jpg', alt: 'Labrador' },
+  { src: 'p1050055.jpg', alt: 'Cross breed' },
+  { src: 'p1050091.jpg', alt: 'Saint Bernard before' },
+  { src: 'p1050105.jpg', alt: 'Saint Bernard bath time' },
+  { src: 'p10501177.jpg', alt: 'Saint Bernard body shave' },
+  { src: 'p1050124.jpg', alt: 'Jack Russell cross' },
+  { src: 'p1050132.jpg', alt: 'German Shepherd' },
+  { src: 'p10501565.jpg', alt: 'Labradoodles before' },
+  { src: 'p10501566.jpg', alt: 'Labradoodle wash only' },
+  { src: 'p1020724.jpg', alt: 'Labradoodle in the bath' },
+  { src: 'p1020754.jpg', alt: 'Labradoodle showing off' },
+  { src: 'p1050379.jpg', alt: 'Shar Pei' },
+  { src: 'p1050450.jpg', alt: 'Miniature Poodle' },
+  { src: 'p1050739.jpg', alt: 'Bedlington Terrier' },
+  { src: 'p1060239.jpg', alt: 'Bedlington Terrier' },
+  { src: 'p1050753.jpg', alt: 'Beagle' },
+  { src: 'pa280031.jpg', alt: 'Support harness for older dogs, available in three sizes to suit all breeds' },
+  { src: 'p1060148.jpg', alt: 'Cocker Spaniel' },
+  { src: 'p1060306.jpg', alt: 'Puppy Poodle' },
+  { src: 'p1060393.jpg', alt: 'Yorkie' },
+  { src: 'p1060562.jpg', alt: 'Bichon x Jack Russell' },
+  { src: 'p1070059.jpg', alt: 'Siberian Husky' },
+  { src: 'p1070101.jpg', alt: 'Siberian Husky' },
+  { src: 'p1070206.jpg', alt: 'Bichon Frise' },
+];
+---
+
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gallery | Dog Gone Clean, Swansea</title>
+    <meta name="description" content="See before and after photos from Dog Gone Clean, Swansea. Schnauzers, Shih-tzus, Labradors, Spaniels, Terriers and many more breeds groomed to perfection." />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="preload" href="/2448/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/2448/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  </head>
+  <body class="bg-brand-bg">
+
+    <!-- Preview banner -->
+    <div class="bg-brand-accent text-white py-2.5 px-4 text-center text-sm sticky top-0 z-50">
+      <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+        <span>Preview redesign for <strong>Dog Gone Clean</strong> by <strong>Biscuit Web</strong></span>
+        <a href="https://biscuitweb.co.uk/activate?id=2448&name=Dog%20Gone%20Clean" class="inline-flex items-center px-4 py-1 bg-white text-brand-accent font-bold text-xs rounded-full hover:opacity-80 transition-opacity shrink-0">
+          Like it? Activate for &pound;50
+        </a>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white border-b border-border sticky top-10 z-40">
+      <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+        <a href="/2448" class="font-display font-extrabold text-xl text-brand-accent">Dog Gone Clean 🐾</a>
+        <button class="md:hidden p-2 text-ink-soft" onclick="document.getElementById('mobile-nav').classList.toggle('hidden')" aria-label="Open menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <nav class="hidden md:flex items-center gap-5">
+          {nav.map(n => (
+            <a href={n.href} class={`text-sm font-semibold transition-colors ${n.href === '/2448/gallery' ? 'text-brand-accent' : 'text-ink-soft hover:text-brand-accent'}`}>{n.label}</a>
+          ))}
+          <a href="tel:+447837280709" class="inline-flex items-center px-5 py-2 bg-brand-accent text-white font-display font-bold text-sm rounded hover:opacity-90 transition-opacity">
+            07837 280 709
+          </a>
+        </nav>
+      </div>
+      <div id="mobile-nav" class="hidden md:hidden border-t border-border bg-white px-6 pb-4">
+        {nav.map(n => (
+          <a href={n.href} class="block py-2.5 text-sm font-semibold text-ink-soft hover:text-brand-accent border-b border-border last:border-0">{n.label}</a>
+        ))}
+        <a href="tel:+447837280709" class="mt-3 block text-center px-5 py-3 bg-brand-accent text-white font-display font-bold text-sm rounded">
+          Call: 07837 280 709
+        </a>
+      </div>
+    </header>
+
+    <!-- Page header -->
+    <section class="py-14 sm:py-20 bg-brand-purple text-white text-center">
+      <div class="relative z-10 mx-auto max-w-3xl px-6">
+        <div class="inline-flex items-center gap-1.5 bg-white/15 text-white text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
+          📍 Swansea
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-display font-extrabold text-white mb-4">Gallery</h1>
+        <p class="text-white/85 text-lg max-w-xl mx-auto">Hundreds of happy dogs, grooms from the last several years. Every breed, every coat type.</p>
+      </div>
+    </section>
+
+    <!-- Before & After Section -->
+    <section class="py-16 sm:py-20 bg-white">
+      <div class="mx-auto max-w-7xl px-6">
+        <h2 class="text-2xl sm:text-3xl font-display font-extrabold text-ink mb-2">Before &amp; After</h2>
+        <p class="text-ink-soft mb-10">Side-by-side transformations from our grooming sessions.</p>
+        <div class="space-y-6">
+          {beforeAfterPairs.map(pair => (
+            <div class="grid grid-cols-2 gap-2 sm:gap-3 max-w-xl">
+              <div class="overflow-hidden rounded-xl aspect-video">
+                <img src={`/images/${pair.before.src}`} alt={pair.before.alt} loading="lazy" class="w-full h-full object-cover" width="800" height="450" />
+              </div>
+              <div class="overflow-hidden rounded-xl aspect-video">
+                <img src={`/images/${pair.after.src}`} alt={pair.after.alt} loading="lazy" class="w-full h-full object-cover" width="800" height="450" />
+              </div>
+              <div class="col-span-2 flex items-center gap-2">
+                <span class="inline-block bg-brand-pink-light text-brand-accent text-xs font-semibold px-2.5 py-0.5 rounded-full">{pair.breed}</span>
+                <span class="text-xs text-ink-whisper">Before &rarr; After</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Full gallery grid -->
+    <section class="py-16 sm:py-20 bg-cream-dark">
+      <div class="mx-auto max-w-7xl px-6">
+        <h2 class="text-2xl sm:text-3xl font-display font-extrabold text-ink mb-2">More from the Salon</h2>
+        <p class="text-ink-soft mb-10">Bath time, puppies, big dogs and everything in between.</p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
+          {singleImages.map(img => (
+            <div class="overflow-hidden rounded-xl aspect-square">
+              <img src={`/images/${img.src}`} alt={img.alt} loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" width="800" height="450" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-14 bg-brand-accent text-white text-center">
+      <div class="mx-auto max-w-2xl px-6">
+        <h2 class="text-2xl font-display font-extrabold text-white mb-4">Want your dog to look this good?</h2>
+        <p class="text-white/85 mb-6">Call us to book. We're at 74 Bon-Y-Maen Road, Swansea.</p>
+        <a href="tel:+447837280709" class="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-brand-accent font-display font-bold rounded hover:opacity-90 transition-opacity">
+          📞 07837 280 709
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-ink text-white py-12">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          <div>
+            <div class="font-display font-extrabold text-lg text-white mb-3">Dog Gone Clean 🐾</div>
+            <p class="text-white/60 text-sm leading-relaxed">Professional dog grooming for all breeds, large or small. Based in Swansea.</p>
+          </div>
+          <div>
+            <div class="font-display font-bold text-sm text-white/80 uppercase tracking-widest mb-3">Pages</div>
+            <ul class="space-y-2">
+              {nav.map(n => (
+                <li><a href={n.href} class="text-white/60 text-sm hover:text-white transition-colors">{n.label}</a></li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <div class="font-display font-bold text-sm text-white/80 uppercase tracking-widest mb-3">Contact</div>
+            <ul class="space-y-2 text-white/60 text-sm">
+              <li><a href="tel:+447837280709" class="hover:text-white transition-colors">07837 280 709</a></li>
+              <li>74 Bon-Y-Maen Rd<br />Swansea</li>
+            </ul>
+          </div>
+          <div>
+            <div class="font-display font-bold text-sm text-white/80 uppercase tracking-widest mb-3">Follow Us</div>
+            <a href="http://en-gb.facebook.com/pages/Dog-Gone-Clean/245372945482676" target="_blank" rel="noopener noreferrer" class="text-white/60 text-sm hover:text-white transition-colors">
+              Facebook Page &rarr;
+            </a>
+          </div>
+        </div>
+        <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-white/40 text-xs">
+          <span>&copy; 2024 Dog Gone Clean. All rights reserved.</span>
+          <span>This is a sample site built by <a href="/" class="hover:text-white/70 transition-colors">Biscuit Web</a> to showcase our work.</span>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

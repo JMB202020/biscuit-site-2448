@@ -1,0 +1,172 @@
+---
+import '../styles/site.css';
+const nav = [
+  { label: 'Home', href: '/2448' },
+  { label: 'Services', href: '/2448/services' },
+  { label: 'Salon', href: '/2448/salon' },
+  { label: 'Self-Service Wash', href: '/2448/self-service' },
+  { label: 'Gallery', href: '/2448/gallery' },
+  { label: 'About', href: '/2448/about' },
+  { label: 'Contact', href: '/2448/contact' },
+];
+---
+
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Salon | Dog Gone Clean, Swansea</title>
+    <meta name="description" content="Take a look at our grooming salon in Swansea. Purpose-built bathing facilities and a calm environment for dogs of all sizes." />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="preload" href="/2448/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/2448/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  </head>
+  <body class="bg-brand-bg">
+
+    <!-- Preview banner -->
+    <div class="bg-brand-accent text-white py-2.5 px-4 text-center text-sm sticky top-0 z-50">
+      <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+        <span>Preview redesign for <strong>Dog Gone Clean</strong> by <strong>Biscuit Web</strong></span>
+        <a href="https://biscuitweb.co.uk/activate?id=2448&name=Dog%20Gone%20Clean" class="inline-flex items-center px-4 py-1 bg-white text-brand-accent font-bold text-xs rounded-full hover:opacity-80 transition-opacity shrink-0">
+          Like it? Activate for &pound;50
+        </a>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white border-b border-border sticky top-10 z-40">
+      <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+        <a href="/2448" class="font-display font-extrabold text-xl text-brand-accent">Dog Gone Clean 🐾</a>
+        <button class="md:hidden p-2 text-ink-soft" onclick="document.getElementById('mobile-nav').classList.toggle('hidden')" aria-label="Open menu">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <nav class="hidden md:flex items-center gap-5">
+          {nav.map(n => (
+            <a href={n.href} class={`text-sm font-semibold transition-colors ${n.href === '/2448/salon' ? 'text-brand-accent' : 'text-ink-soft hover:text-brand-accent'}`}>{n.label}</a>
+          ))}
+          <a href="tel:+447837280709" class="inline-flex items-center px-5 py-2 bg-brand-accent text-white font-display font-bold text-sm rounded hover:opacity-90 transition-opacity">
+            07837 280 709
+          </a>
+        </nav>
+      </div>
+      <div id="mobile-nav" class="hidden md:hidden border-t border-border bg-white px-6 pb-4">
+        {nav.map(n => (
+          <a href={n.href} class="block py-2.5 text-sm font-semibold text-ink-soft hover:text-brand-accent border-b border-border last:border-0">{n.label}</a>
+        ))}
+        <a href="tel:+447837280709" class="mt-3 block text-center px-5 py-3 bg-brand-accent text-white font-display font-bold text-sm rounded">
+          Call: 07837 280 709
+        </a>
+      </div>
+    </header>
+
+    <!-- Page hero with first salon image -->
+    <section class="relative overflow-hidden min-h-[50vh] sm:min-h-[60vh] bg-ink flex items-end">
+      <img src="/2448/images/dog-20bath-201.jpg" alt="Dog bathing at Dog Gone Clean salon, Swansea" class="absolute inset-0 w-full h-full object-cover" fetchpriority="high" />
+      <div class="absolute inset-0 bg-black/70"></div>
+      <div class="relative z-10 mx-auto max-w-4xl px-6 pb-12 pt-32 text-white w-full">
+        <div class="inline-flex items-center gap-1.5 bg-white/15 text-white text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
+          📍 Swansea
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-display font-extrabold text-white mb-3">The Salon</h1>
+        <p class="text-white/85 text-lg max-w-xl">Our purpose-built grooming salon in Swansea, designed to keep dogs calm and comfortable throughout their visit.</p>
+      </div>
+    </section>
+
+    <!-- Salon description -->
+    <section class="py-16 sm:py-20 bg-white">
+      <div class="mx-auto max-w-4xl px-6">
+        <p class="text-ink-soft text-lg leading-relaxed mb-5">
+          Our salon on Bon-Y-Maen Road is set up specifically for grooming. There's a proper raised bath with a non-slip base so dogs feel secure, professional drying equipment, and a grooming table suited to all sizes from a tiny Jack Russell up to large breeds like Akitas and Saint Bernards.
+        </p>
+        <p class="text-ink-soft leading-relaxed mb-5">
+          We keep the environment calm and low-key. No multiple dogs being groomed at once in a chaotic space. Your dog gets individual attention from start to finish.
+        </p>
+        <p class="text-ink-soft leading-relaxed">
+          The salon is also available for <a href="/2448/self-service" class="text-brand-accent hover:underline font-semibold">self-service dog washing</a> if you'd rather do it yourself but want proper facilities.
+        </p>
+      </div>
+    </section>
+
+    <!-- Salon photo gallery -->
+    <section class="py-8 sm:py-12 bg-cream-dark">
+      <div class="mx-auto max-w-7xl px-6">
+        <h2 class="text-2xl sm:text-3xl font-display font-extrabold text-ink mb-8 text-center">Inside the Salon</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="overflow-hidden rounded-xl aspect-video">
+            <img src="/2448/images/dog-20bath-201.jpg" alt="Dog bath at Dog Gone Clean grooming salon" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" width="800" height="450" />
+          </div>
+          <div class="overflow-hidden rounded-xl aspect-video">
+            <img src="/2448/images/dog-20bath-202.jpg" alt="Dog being bathed at the grooming salon" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" width="800" height="450" />
+          </div>
+          <div class="overflow-hidden rounded-xl aspect-video">
+            <img src="/2448/images/dog-20bath-203.jpg" alt="Dog bath station at Dog Gone Clean" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" width="800" height="450" />
+          </div>
+          <div class="overflow-hidden rounded-xl aspect-video">
+            <img src="/2448/images/grooming-20room-201.jpg" alt="Grooming room at Dog Gone Clean, Swansea" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" width="800" height="450" />
+          </div>
+          <div class="overflow-hidden rounded-xl aspect-video">
+            <img src="/2448/images/grooming-20room-202.jpg" alt="Grooming room interior at Dog Gone Clean" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" width="800" height="450" />
+          </div>
+          <div class="overflow-hidden rounded-xl aspect-video">
+            <img src="/2448/images/p1040735.jpg" alt="Dog being groomed at Dog Gone Clean salon" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" width="800" height="450" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-14 bg-brand-accent text-white text-center">
+      <div class="mx-auto max-w-2xl px-6">
+        <h2 class="text-2xl sm:text-3xl font-display font-extrabold text-white mb-4">Book your dog in today</h2>
+        <p class="text-white/85 mb-6">Call us to check availability. We're based at 74 Bon-Y-Maen Road, Swansea.</p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="tel:+447837280709" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-white text-brand-accent font-display font-bold rounded hover:opacity-90 transition-opacity">
+            📞 07837 280 709
+          </a>
+          <a href="/2448/services" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-white/15 text-white font-display font-bold rounded border border-white/30 hover:bg-white/25 transition-colors">
+            View Services
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-ink text-white py-12">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+          <div>
+            <div class="font-display font-extrabold text-lg text-white mb-3">Dog Gone Clean 🐾</div>
+            <p class="text-white/60 text-sm leading-relaxed">Professional dog grooming for all breeds, large or small. Based in Swansea.</p>
+          </div>
+          <div>
+            <div class="font-display font-bold text-sm text-white/80 uppercase tracking-widest mb-3">Pages</div>
+            <ul class="space-y-2">
+              {nav.map(n => (
+                <li><a href={n.href} class="text-white/60 text-sm hover:text-white transition-colors">{n.label}</a></li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <div class="font-display font-bold text-sm text-white/80 uppercase tracking-widest mb-3">Contact</div>
+            <ul class="space-y-2 text-white/60 text-sm">
+              <li><a href="tel:+447837280709" class="hover:text-white transition-colors">07837 280 709</a></li>
+              <li>74 Bon-Y-Maen Rd<br />Swansea</li>
+            </ul>
+          </div>
+          <div>
+            <div class="font-display font-bold text-sm text-white/80 uppercase tracking-widest mb-3">Follow Us</div>
+            <a href="http://en-gb.facebook.com/pages/Dog-Gone-Clean/245372945482676" target="_blank" rel="noopener noreferrer" class="text-white/60 text-sm hover:text-white transition-colors">
+              Facebook Page &rarr;
+            </a>
+          </div>
+        </div>
+        <div class="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-white/40 text-xs">
+          <span>&copy; 2024 Dog Gone Clean. All rights reserved.</span>
+          <span>This is a sample site built by <a href="/" class="hover:text-white/70 transition-colors">Biscuit Web</a> to showcase our work.</span>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
